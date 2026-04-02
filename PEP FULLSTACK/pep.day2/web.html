@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ling's Cars - Modern Redesign</title>
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 1rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: url('cars.jpg') center/cover no-repeat;
+      color: #fff;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero input {
+      padding: 0.7rem;
+      width: 60%;
+      max-width: 400px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .car-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .car-card h2 {
+      font-size: 1.2rem;
+      margin: 0.5rem;
+    }
+
+    .car-card p {
+      margin: 0.5rem;
+      color: #666;
+    }
+
+    .car-card button {
+      display: block;
+      width: 90%;
+      margin: 1rem auto;
+      padding: 0.7rem;
+      background: #ff5722;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .car-card button:hover {
+      background: #e64a19;
+    }
+
+    footer {
+      background: #1a1a2e;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Cars</a></li>
+        <li><a href="#">Leasing Options</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Find Your Perfect Car</h1>
+    <input type="search" placeholder="Search cars...">
+  </section>
+
+  <section class="car-grid">
+    <div class="car-card">
+      <img src="toyota.jpg" alt="Toyota Corolla">
+      <h2>Toyota Corolla</h2>
+      <p>From $199/month</p>
+      <button>Lease Now</button>
+    </div>
+    <div class="car-card">
+      <img src="honda.jpg" alt="Honda Civic">
+      <h2>Honda Civic</h2>
+      <p>From $209/month</p>
+      <button>Lease Now</button>
+    </div>
+    <div class="car-card">
+      <img src="ford.jpg" alt="Ford Focus">
+      <h2>Ford Focus</h2>
+      <p>From $189/month</p>
+      <button>Lease Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Ling's Cars. All rights reserved.</p>
+  </footer>
+</body>
+</html>

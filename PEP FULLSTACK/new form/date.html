@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Month Name</title>
+</head>
+<body>
+
+<h3>Enter Date (YYYY-MM-DD):</h3>
+<input type="date" id="dateInput">
+<button onclick="getMonthName()">Get Month</button>
+
+<p id="result"></p>
+
+<script>
+function getMonthName() {
+    let input = document.getElementById("dateInput").value;
+    let date = new Date(input);
+
+    let months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+
+    let monthName = months[date.getMonth()];
+    document.getElementById("result").innerText = monthName;
+}
+</script>
+
+</body>
+</html>

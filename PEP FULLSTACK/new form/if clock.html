@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>12-Hour Digital Clock</title>
+    </head>
+    <style>
+        #clock {
+            font-size: 6em;
+            text-align: center;
+            color: white;
+            margin-top:auto
+        }</style>
+    <body style="background-color:blue;">
+        <h1 style="text-align: center;font-size: large;">12-Hour Digital Clock</h1>
+
+        <h2 id="clock"></h2>
+        <script>
+        function updateClock() {
+            const now = new Date();
+
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let ampm;
+            if (hours >= 12){
+                ampm = 'PM';
+            } else if (hours < 12){
+                ampm = 'AM';
+            }
+            if (hours > 12){
+                hours = hours-12;
+            }
+            else if (hours == 0){
+                hours = 12;
+            }
+            if(hours > 10){
+                hours = "0" + hours;
+            }
+            else if(minutes < 10){
+                minutes = "0" + minutes;
+            }
+            else if(seconds < 10){
+                seconds = "0" + seconds;
+            }
+            document.getElementById("clock").textContent = hours + ":" + minutes + ":" + seconds + " " + ampm;
+            
+
+        }
+        setInterval(updateClock,1000);
+        updateClock();
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Natural Grid</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 2rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      grid-template-rows: repeat(3, auto);
+      gap: 1.5rem; 
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .grid-item {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .caption {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Natural Gallery</h1>
+  <div class="grid-container">
+    <div class="grid-item">
+      <img src="na.jpg" alt="nature">
+      <div class="caption">nature</div>
+    </div>
+    <div class="grid-item">
+      <img src="nat.jpg" alt="nature">
+      <div class="caption">nature</div>
+    </div>
+    <div class="grid-item">
+      <img src="natu.jpg" alt="nature">
+      <div class="caption">nature</div>
+    </div>
+    <div class="grid-item">
+      <img src="natur.jpg" alt="nature">
+      <div class="caption">nature</div>
+    </div>
+    <div class="grid-item">
+      <img src="natura.jpg" alt="nature">
+      <div class="caption">nature</div>
+    </div>
+    <div class="grid-item">
+      <img src="nature.jpg" alt="nature">
+      <div class="caption">nature</div>
+    </div>
+  </div>
+</body>
+</html>

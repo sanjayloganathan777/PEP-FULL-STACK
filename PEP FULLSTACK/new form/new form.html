@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form Validation</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+}
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    background: black;
+    color: white;
+    border: none;
+}
+.error {
+    color: red;
+    font-size: 12px;
+}
+.success {
+    color: green;
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Register</h2>
+
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter Name">
+        <div class="error" id="nameError"></div>
+
+        <input type="email" id="email" placeholder="Enter Email">
+        <div class="error" id="emailError"></div>
+
+        <input type="password" id="password" placeholder="Enter Password">
+        <div class="error" id="passwordError"></div>
+
+        <input type="text" id="phone" placeholder="Enter Phone">
+        <div class="error" id="phoneError"></div>
+
+        <button type="submit">Submit</button>
+        <div class="success" id="successMsg"></div>
+    </form>
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let phone = document.getElementById("phone").value;
+
+    let nameRegex = /^[A-Za-z]+$/;
+    let emailRegex = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    let passwordRegex = /^(?=.*[A-Z])(?=.*[0-9]).{6,}$/;
+    let phoneRegex = /^[0-9]{10}$/;
+
+    let valid = true;
+
+    // Name
+    if (!nameRegex.test(name)) {
+        document.getElementById("nameError").innerText = "Only letters allowed";
+        valid = false;
+    } else {
+        document.getElementById("nameError").innerText = "";
+    }
+
+    // Email
+    if (!emailRegex.test(email)) {
+        document.getElementById("emailError").innerText = "Invalid email";
+        valid = false;
+    } else {
+        document.getElementById("emailError").innerText = "";
+    }
+
+    // Password
+    if (!passwordRegex.test(password)) {
+        document.getElementById("passwordError").innerText = "Min 6 chars, 1 uppercase, 1 number";
+        valid = false;
+    } else {
+        document.getElementById("passwordError").innerText = "";
+    }
+
+    // Phone
+    if (!phoneRegex.test(phone)) {
+        document.getElementById("phoneError").innerText = "Enter 10 digit number";
+        valid = false;
+    } else {
+        document.getElementById("phoneError").innerText = "";
+    }
+
+    // Success
+    if (valid) {
+        document.getElementById("successMsg").innerText = "Form Submitted Successfully!";
+    }
+});
+</script>
+
+</body>
+</html>
